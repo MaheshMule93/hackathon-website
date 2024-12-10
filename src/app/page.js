@@ -1,12 +1,17 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
-    <Image src='/Wikidata_Map_April_2016_Big.png' width={1000} height={500} alt='wiki image'/>
+      <Image
+        src='/Wikidata_Map_April_2016_Big.png'
+        width={1000}
+        height={500}
+        alt='wiki image'
+      />
       <p>
         Diam maecenas sed enim ut sem viverra aliquet eget sit. Adipiscing
-        commodo elit at imperdiet dui accumsan sit. Vel fringilla est
+        commodo elit at imperdiet dui accumsan sit. Vel fringilla est adf
         ullamcorper eget nulla facilisi etiam dignissim. Eleifend mi in nulla
         posuere. Nullam ac tortor vitae purus.
       </p>
