@@ -1,0 +1,20 @@
+name: Notify Deployment
+
+on:
+  deployment_status:
+    types: [success] # Trigger when deployment succeeds
+
+jobs:
+  notify-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Trigger API Endpoint
+        run: |
+          curl -X GET "https://sushilkundu143.github.io/webtrendmonitor_backend/publish-build?buildId=$BUILD_ID&sitemapXML=$SITEMAP_URL"
+
+        env:
+          BUILD_ID: ${{ github.run_id }} # Unique GitHub Actions run ID (as build ID)
+          SITEMAP_URL: "https://example.com/sitemap.xml" # Hardcoded sitemap URL
